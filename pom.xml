@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -18,7 +19,7 @@ of Jackson components maintained by FasterXML.com
   <packaging>pom</packaging>
 
   <modules>
-   <module>base</module> <!-- "It's all about that base 'bout that base..." -->
+    <module>base</module>    <!-- "It's all about that base 'bout that base..." -->
   </modules>
 
   <organization>
@@ -50,6 +51,7 @@ of Jackson components maintained by FasterXML.com
 
   <properties>
     <jackson.version>2.17.0-SNAPSHOT</jackson.version>
+    <maven.jackson.stable.version>2.16.0</maven.jackson.stable.version>
 
     <!-- 25-Sep-2019, tatu: With Jackson 2.x we will release full patch-level versions
            of annotations BUT they are all identical, content-wise.
@@ -132,7 +134,7 @@ of Jackson components maintained by FasterXML.com
         <artifactId>jackson-dataformat-smile</artifactId>
         <version>${jackson.version.dataformat}</version>
       </dependency>
-      <dependency> <!-- Officially added in 2.13.0, beta in 2.12.3 -->
+      <dependency>        <!-- Officially added in 2.13.0, beta in 2.12.3 -->
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-toml</artifactId>
         <version>${jackson.version.dataformat}</version>
@@ -173,18 +175,18 @@ of Jackson components maintained by FasterXML.com
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-hibernate4</artifactId>
         <version>${jackson.version.datatype}</version>
-      </dependency> 
+      </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-hibernate5</artifactId>
         <version>${jackson.version.datatype}</version>
       </dependency>
-      <dependency> <!-- Added in 2.13 -->
+      <dependency>        <!-- Added in 2.13 -->
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-hibernate5-jakarta</artifactId>
         <version>${jackson.version.datatype}</version>
       </dependency>
-      <dependency> <!-- Added in 2.15 -->
+      <dependency>        <!-- Added in 2.15 -->
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-hibernate6</artifactId>
         <version>${jackson.version.datatype}</version>
@@ -194,7 +196,7 @@ of Jackson components maintained by FasterXML.com
         <artifactId>jackson-datatype-hppc</artifactId>
         <version>${jackson.version.datatype}</version>
       </dependency>
-      <dependency> <!-- since 2.12.2 -->
+      <dependency>        <!-- since 2.12.2 -->
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-jakarta-jsonp</artifactId>
         <version>${jackson.version.datatype}</version>
@@ -211,7 +213,7 @@ of Jackson components maintained by FasterXML.com
         <artifactId>jackson-datatype-joda</artifactId>
         <version>${jackson.version.datatype}</version>
       </dependency>
-      <dependency> <!-- since 2.11 -->
+      <dependency>        <!-- since 2.11 -->
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-joda-money</artifactId>
         <version>${jackson.version.datatype}</version>
@@ -339,7 +341,7 @@ of Jackson components maintained by FasterXML.com
         <artifactId>jackson-module-afterburner</artifactId>
         <version>${jackson.version.module}</version>
       </dependency>
-      <dependency> <!-- Added in 2.16 -->
+      <dependency>        <!-- Added in 2.16 -->
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-android-record</artifactId>
         <version>${jackson.version.module}</version>
@@ -359,7 +361,7 @@ of Jackson components maintained by FasterXML.com
         <artifactId>jackson-module-jaxb-annotations</artifactId>
         <version>${jackson.version.module}</version>
       </dependency>
-      <dependency> <!-- 2.13+: Jakarta-bind too [modules-base#130] -->
+      <dependency>        <!-- 2.13+: Jakarta-bind too [modules-base#130] -->
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-jakarta-xmlbind-annotations</artifactId>
         <version>${jackson.version.module}</version>
@@ -369,7 +371,7 @@ of Jackson components maintained by FasterXML.com
         <artifactId>jackson-module-jsonSchema</artifactId>
         <version>${jackson.version.module}</version>
       </dependency>
-      <dependency> <!-- 2.15+ Jakarta variant as well [jsonSchema#151] -->
+      <dependency>        <!-- 2.15+ Jakarta variant as well [jsonSchema#151] -->
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-jsonSchema-jakarta</artifactId>
         <version>${jackson.version.module}</version>
@@ -384,7 +386,7 @@ of Jackson components maintained by FasterXML.com
         <artifactId>jackson-module-mrbean</artifactId>
         <version>${jackson.version.module}</version>
       </dependency>
-      <dependency> <!-- Added in 2.13.0 -->
+      <dependency>        <!-- Added in 2.13.0 -->
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-no-ctor-deser</artifactId>
         <version>${jackson.version.module}</version>
@@ -439,8 +441,22 @@ of Jackson components maintained by FasterXML.com
       <id>sonatype-nexus-snapshots</id>
       <name>Sonatype Nexus Snapshots</name>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases><enabled>false</enabled></releases>
-      <snapshots><enabled>true</enabled></snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
   </repositories>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>.</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+
 </project>
